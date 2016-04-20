@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+ 
+    <style>
+ 
+    #button {
+        width:50px;
+        height:22px;
+        position:absolute;
+        top:26px;
+        left:50px;
+    }
+ 
+    </style>
+</head>
+<body>
+
+<form>
+  <label id="cau_hoi" name="cau_hoi">Bạn có bị điên không??</label><br />
+  <input type="button"  value="Có" name="yes" onClick="Fyes()" />
+  <input type="button" id="button" value="Không" onClick="move()" />
+  <p id="tra_loi"></p>
+</form>
+	
+<script>
+
+  if (screen.width <= 800) {
+    document.location = "index2.html";
+  }
+
+	function Fyes() {
+		var txt;
+		var r = confirm("Bạn có chắc bạn bị điên?");
+		if (r == true) {
+			txt = "Thôi xong, bạn nên vào trại trước khi quá muộn";
+			var x = document.createElement("IMG");
+    			x.setAttribute("src", "crazy.gif");
+    			x.setAttribute("width", "304");
+    			x.setAttribute("width", "228");
+    			x.setAttribute("alt", "Crazy");
+    			document.body.appendChild(x);
+		} else {
+			txt = "Tôi không nghĩ bạn bình thường khi ấn nút đó :D";
+			var x = document.createElement("IMG");
+    			x.setAttribute("src", "crazy.gif");
+    			x.setAttribute("width", "304");
+    			x.setAttribute("width", "228");
+    			x.setAttribute("alt", "Crazy");
+    			document.body.appendChild(x);
+		}
+		document.getElementById("tra_loi").innerHTML = txt;
+	}
+    var button = document.getElementById("button");
+    var browserWidth = window.innerWidth || document.documentElement.clientWidth;
+    var browserHeight = window.innerHeight || document.documentElement.clientHeight;
+    var buttonWidth = button.offsetWidth;
+    var buttonHeight = button.offsetHeight;
+ 
+    function move() {
+        button.style.left = Math.floor(Math.random()*(browserWidth-buttonWidth)) + "px";
+        button.style.top = Math.floor(Math.random()*(browserHeight-buttonHeight)) + "px";
+    }
+ 
+    if(typeof addEventListener !== "undefined") {
+        button.addEventListener("mouseover", move, false);
+    } else if (typeof attachEvent !== "undefined") {
+        button.attachEvent("onmouseover", move);
+    } else {
+        button.onmousover = move;
+    }
+ 
+</script>
+</body>
+</html>
