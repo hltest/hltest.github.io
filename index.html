@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+ 
+    <style>
+ 
+    #button {
+        width:32px;
+        height:22px;
+        position:absolute;
+        top:26px;
+        left:50px;
+    }
+ 
+    </style>
+</head>
+<body>
+	
+<form>
+  <label id="QuestionToAsk" name="QuestionToAsk">Bạn có yêu tôi không?</label><br />
+  <input type="button"  value="Yes" name="yes" onClick="Fyes()" />
+  <input type="button" id="button" value="No" onClick="move()" />
+  <p id="tra_loi"></p>
+</form>
+ 
+ 
+<script>
+
+	function Fyes() {
+		var txt;
+		var r = confirm("Thật không?");
+		if (r == true) {
+			txt = "Ồ, tôi cũng thế";
+		} else {
+			txt = "Không tức là có rồi!!";
+		}
+		document.getElementById("tra_loi").innerHTML = txt;
+	}
+    var button = document.getElementById("button");
+    var browserWidth = window.innerWidth || document.documentElement.clientWidth;
+    var browserHeight = window.innerHeight || document.documentElement.clientHeight;
+    var buttonWidth = button.offsetWidth;
+    var buttonHeight = button.offsetHeight;
+ 
+    function move() {
+        button.style.left = Math.floor(Math.random()*(browserWidth-buttonWidth)) + "px";
+        button.style.top = Math.floor(Math.random()*(browserHeight-buttonHeight)) + "px";
+    }
+ 
+    if(typeof addEventListener !== "undefined") {
+        button.addEventListener("mouseover", move, false);
+    } else if (typeof attachEvent !== "undefined") {
+        button.attachEvent("onmouseover", move);
+    } else {
+        button.onmousover = move;
+    }
+ 
+</script>
+</body>
+</html>
