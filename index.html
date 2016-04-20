@@ -36,6 +36,12 @@
 		var r = confirm("Thật không?");
 		if (r == true) {
 			txt = "Ồ, tôi cũng thế";
+			var x = document.createElement("IMG");
+    			x.setAttribute("src", "heart.gif");
+    			x.setAttribute("width", "304");
+    			x.setAttribute("width", "228");
+    			x.setAttribute("alt", "Heart");
+    			document.body.appendChild(x);
 		} else {
 			txt = "Không tức là có rồi!!";
 		}
