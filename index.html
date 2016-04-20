@@ -7,7 +7,7 @@
     <style>
  
     #button {
-        width:45px;
+        width:48px;
         height:22px;
         position:absolute;
         top:26px;
@@ -17,6 +17,13 @@
     </style>
 </head>
 <body>
+
+<form>
+  <label id="QuestionToAsk" name="QuestionToAsk">Bạn có yêu tôi không?</label><br />
+  <input type="button"  value="Có" name="yes" onClick="Fyes()" />
+  <input type="button" id="button" value="Không" onClick="move()" />
+  <p id="tra_loi"></p>
+</form>
 	
 <script>
 
@@ -54,12 +61,5 @@
     }
  
 </script>
-	
-<form>
-  <label id="QuestionToAsk" name="QuestionToAsk">Bạn có yêu tôi không?</label><br />
-  <input type="button"  value="Có" name="yes" onClick="Fyes()" />
-  <input type="button" id="button" value="Không" onClick="move()" />
-  <p id="tra_loi"></p>
-</form>
 </body>
 </html>
