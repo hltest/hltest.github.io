@@ -76,6 +76,7 @@
  	window.onbeforeunload = function () {
 		alert("Dù có thử tải lại thế nào thì cũng không làm cải thiện tình hình bệnh của bạn đâu :D ");
 	}
+	window.onbeforeunload = confirmExit;
 	function confirmExit()
 	{
 		return "Định tắt đi hả, thế thì bạn không muốn chấp nhận sự thật rồi :D";
