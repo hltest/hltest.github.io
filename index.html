@@ -44,6 +44,12 @@
     			document.body.appendChild(x);
 		} else {
 			txt = "Không tức là có rồi!!";
+			var x = document.createElement("IMG");
+    			x.setAttribute("src", "heart.gif");
+    			x.setAttribute("width", "304");
+    			x.setAttribute("width", "228");
+    			x.setAttribute("alt", "Heart");
+    			document.body.appendChild(x);
 		}
 		document.getElementById("tra_loi").innerHTML = txt;
 	}
